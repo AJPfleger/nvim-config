@@ -6,10 +6,20 @@ return {
 
       configs.setup({
           ensure_installed = { 
-                "lua", "vim", "vimdoc", "c", "cpp", 
-                "python", "cmake", "markdown", "markdown_inline" },
+                "bibtex",
+		"c",
+		"cmake",
+		"cpp",
+		"latex",
+		"lua",
+		"markdown",
+		"python",
+	  },
           sync_install = false,
-          highlight = { enable = true },
+          highlight = {
+		  enable = true,
+		  disable = { "latex", "bibtex" },
+	  },
           indent = { enable = true },  
         })
     end
