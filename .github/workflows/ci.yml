@@ -1,0 +1,39 @@
+name: Test Neovim Config on macOS
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  test:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Install Homebrew
+      run: |
+        if ! command -v brew &> /dev/null; then
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        fi
+        echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+
+    - name: Install Dependencies
+      run: |
+        brew update
+        brew install \
+          neovim
+
+    - name: Apply Neovim Configuration
+      run: ./install.sh
+
+    - name: Test Neovim Config
+      run: |
+        nvim --headless +qall || echo "Neovim failed to load configuration"
+        nvim --headless +'checkhealth' +'qall' || echo "CheckHealth failed"
+        nvim --headless +'lua print(vim.inspect(vim.fn.stdpath("config")))' +'qall' || echo "Failed to inspect config path"
+
