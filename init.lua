@@ -19,3 +19,8 @@ vim.keymap.set('n', '<leader>fg', telescope.live_grep, { desc = 'Telescope live 
 -- vim.keymap.set('n', '<leader>fb', telescope.buffers, { desc = 'Telescope buffers' })
 -- vim.keymap.set('n', '<leader>fh', telescope.help_tags, { desc = 'Telescope help tags' })
 
+vim.api.nvim_set_keymap('n', '<leader>hs', ':Gitsigns stage_hunk<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>hr', ':Gitsigns reset_hunk<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>hb', ':Gitsigns blame_line<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>hd', ':Gitsigns diffthis<CR>', { noremap = true, silent = true })
+
