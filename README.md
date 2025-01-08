@@ -52,3 +52,14 @@ Settings > Profiles > Text
 
 # Todo
 - [ ] get CI running
+
+# Setup guide and prerequisits
+On macOS:
+```console
+brew install neovim
+./install.sh
+```
+and then start with
+```console
+nvim
+```
