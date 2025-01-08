@@ -24,3 +24,4 @@ vim.api.nvim_set_keymap('n', '<leader>hr', ':Gitsigns reset_hunk<CR>', { noremap
 vim.api.nvim_set_keymap('n', '<leader>hb', ':Gitsigns blame_line<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>hd', ':Gitsigns diffthis<CR>', { noremap = true, silent = true })
 
+vim.cmd("language en_GB")

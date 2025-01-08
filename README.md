@@ -39,6 +39,14 @@ It is also possible to add custom snippets, but this is not implemented yet here
 ## treesitter
 
 ## vimtex
+[lervag/vimtex](https://github.com/lervag/vimtex)
+
+### Requirements (macOS)
+```console
+brew install cask
+brew install --cask mactex
+brew install --cask skim
+```
 
 # Common problems
 ### Missing symbols
@@ -56,10 +64,18 @@ Settings > Profiles > Text
 # Setup guide and prerequisits
 On macOS:
 ```console
-brew install neovim
+brew install neovim node cask
+brew install --cask mactex
+brew install --cask skim
 ./install.sh
 ```
-and then start with
+
+# How to use
+Start with:
 ```console
 nvim
 ```
+
+`space + e` - open folder tree
+`space + ff` - find files
+`\ll` - toggle latex auto compilation
