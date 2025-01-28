@@ -33,6 +33,12 @@ To get a full list of available snippets, type `:LuaSnipListAvailable`.
 It is also possible to add custom snippets, but this is not implemented yet here.
 
 ## telescope
+[nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+
+### Requirements (macOS)
+```console
+brew install ripgrep
+```
 
 ## tree
 
@@ -64,7 +70,7 @@ Settings > Profiles > Text
 # Setup guide and prerequisits
 On macOS:
 ```console
-brew install neovim node cask
+brew install neovim node cask ripgrep
 brew install --cask mactex
 brew install --cask skim
 ./install.sh
@@ -76,6 +82,7 @@ Start with:
 nvim
 ```
 
-`space + e` - open folder tree
-`space + ff` - find files
-`\ll` - toggle latex auto compilation
+- `space + e` - open folder tree
+- `space + ff` - find files
+- `space + fg` - find string (live grep)
+- `\ll` - toggle latex auto compilation
